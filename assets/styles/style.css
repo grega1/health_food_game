@@ -1,0 +1,66 @@
+body {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+div{
+    display: inline-block;
+    margin: 12px;
+    font-size: 30px; 
+}
+
+#logo{
+    width: 503px;
+    height: 90px;    
+    margin-right: 25%;
+    font-size: 30px;  
+}
+
+#container{
+    float: left;
+    display: flex;     
+}
+
+#cta-button{
+    width: 494px;
+    height: 94px;
+    border-radius: 25px;
+    background-color: #9e00ff;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    align-self: center;
+    float: left;
+    z-index: 0;
+}
+
+#child{
+    margin-top: -10%;
+    z-index: 1;
+}
+
+#img-child{
+    width: 436px;
+    height: 654px;
+}
+
+#btn{
+    margin-top: 10%;
+}
+
+/*******css-instruções*********/
+#container-instructions{
+    width: 791px;
+    height: 550px;
+    text-align: center;
+    font-size: 36px;
+    background-color: #AE8FD9;
+    border:solid 20px;
+    border-radius:5px;
+    border-color:#111440;
+}
