@@ -64,3 +64,6 @@ div{
     border-radius:5px;
     border-color:#111440;
 }
+.invisible{
+    display: none;
+}

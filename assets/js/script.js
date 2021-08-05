@@ -1,11 +1,14 @@
 $( function() {
     $( ".draggable" ).draggable();
-    $( ".droppable" ).droppable({
+    $( "#droppable" ).droppable({
       drop: function( event, ui ) {
         $( this )
           .addClass( "ui-state-highlight" )
           .find( "p" )
             .html( "Dropped!" );
+      },
+      over: function( event, ui ){
+        $(".draggable").css('display','none');
       }
     });
   } );
