@@ -3,45 +3,49 @@
 <head>
     <meta charset="utf-8">
     <link href="css/style.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="container">
-        <div id="container-instructions">
-            <div class="draggable" class="ui-widget-content">    
-                <img src='./img/orange.png' >
+
+    <div id="container"> 
+
+        <div id="container-foods">
+            <div class="draggable" class="ui-widget-content" id="1">    
+                <img src='./img/orange.png'>
             </div>
-            <div class="draggable" class="ui-widget-content">    
+            <div class="draggable" class="ui-widget-content" id="2">    
                 <img src='./img/banana.png' >
             </div>
-            <div id="draggable" class="ui-widget-content">    
+            <div class="draggable2" class="ui-widget-content" id="3">    
                 <img src='./img/pizza.png' >
             </div>
-            <div class="draggable" class="ui-widget-content">    
+            <div class="draggable" class="ui-widget-content" id="4">    
                 <img src='./img/apple.png' >
             </div>
-            <div class="draggable" class="ui-widget-content">    
+            <div class="draggable" class="ui-widget-content" id="5">    
                 <img src='./img/sleeve.png'>
             </div>
-            <div class="draggable" class="ui-widget-content">    
+            <div class="draggable" class="ui-widget-content" id="6">    
                 <img src='./img/aubergine.png' >
             </div>
-            <div class="draggable" class="ui-widget-content">    
+            <div class="draggable" class="ui-widget-content" id="7">    
                 <img src='./img/pear.png' >
             </div>
-            <div id="draggable" class="ui-widget-content">    
+            <div class="draggable2" class="ui-widget-content" id="8">    
                 <img src='./img/cake.png' >
             </div>
-            <div id="draggable" class="ui-widget-content">    
+            <div class="draggable2" class="ui-widget-content" id="9">    
                 <img src='./img/food.png' >
             </div>
-            <div id="draggable" class="ui-widget-content">    
+            <div class="draggable2" class="ui-widget-content" id="10">    
                 <img src='./img/refri.png' >
             </div>
-            <div id="draggable" class="ui-widget-content">    
+            <div class="draggable2" class="ui-widget-content" id="11">    
                 <img src='./img/cupCake.png' >
             </div>
-            <div class="draggable" class="ui-widget-content">    
+            <div class="draggable" class="ui-widget-content" id="12">    
                 <img src='./img/grape.png' >
             </div>
         </div> 
@@ -49,11 +53,18 @@
         <div id="droppable" class="ui-widget-header">
             <img src='./img/sad-child.png' id="img-child" >
         </div>
+
+       <div class="column"> 
+            <div class="portlet">
+              <div class="portlet-header">INSTRUÇÕES</div>
+              <div class="portlet-content">ARRASTE O ALIMENTO SAUDÁVEL ATÉ A MENINA PARA PONTUAR</div>
+            </div>           
+        </div>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
-    <script src="./js/script.js" ></script>   
-    
+    <script src="./js/script.js" ></script>  
 </body>
 </html>
