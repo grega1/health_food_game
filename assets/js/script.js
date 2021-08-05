@@ -38,11 +38,15 @@ $(document).ready(function() {
   
           if (classesString.includes("draggable2")) {         
             const audio = new Audio('./audio/missed.wav');
-            audio.play();                  
+            audio.play(); 
+            $('#img-child').css('display', 'none');
+            $('#img-sad-child').css('display', 'flex');                 
   
           } else {         
             const audio = new Audio('./audio/happy.mp4');
             audio.play();
+            $("#img-child").css('display', 'none');
+            $('#img-happy-child').css('display', 'flex');
           }
           
           $( this )       
