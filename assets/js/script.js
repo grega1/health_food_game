@@ -40,13 +40,15 @@ $(document).ready(function() {
             const audio = new Audio('./audio/missed.mp4');
             audio.play(); 
             $('#img-child').css('display', 'none');
-            $('#img-sad-child').css('display', 'flex');                 
+            $('#img-sad-child').css('display', 'flex');    
+            $('#img-happy-child').css('display', 'none');             
   
           } else {         
             const audio = new Audio('./audio/happy.mp4');
             audio.play();
             $("#img-child").css('display', 'none');
             $('#img-happy-child').css('display', 'flex');
+            $('#img-sad-child').css('display', 'none');   
           }
           
           $( this )       
