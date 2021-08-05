@@ -1,4 +1,4 @@
- $(document).ready(function() {
+$(document).ready(function() {
 
     $( function() {
       $( ".column" ).sortable({
@@ -37,12 +37,18 @@
           $(idDragg).hide()       
   
           if (classesString.includes("draggable2")) {         
-            const audio = new Audio('./audio/missed.wav');
-            audio.play();                  
+            const audio = new Audio('./audio/missed.mp4');
+            audio.play(); 
+            $('#img-child').css('display', 'none');
+            $('#img-sad-child').css('display', 'flex');    
+            $('#img-happy-child').css('display', 'none');             
   
           } else {         
             const audio = new Audio('./audio/happy.mp4');
             audio.play();
+            $("#img-child").css('display', 'none');
+            $('#img-happy-child').css('display', 'flex');
+            $('#img-sad-child').css('display', 'none');   
           }
           
           $( this )       

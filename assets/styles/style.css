@@ -67,7 +67,7 @@ div{
     margin-top: 10%;
 }
 
-/*******css-instruções*********/
+/**css-instruções****/
 #container-instructions{
     width: 791px;
     height: 550px;   
@@ -79,7 +79,11 @@ div{
     border-color:#111440;
 }
 
+<<<<<<< HEAD
 /************food*************/
+=======
+/*****food****/
+>>>>>>> 0a3e222a1ac48e58ee83c2afaba15c46a07b283a
 #container-foods{
     width: 730px;
     height: 550px;
@@ -96,7 +100,11 @@ div{
     border: transparent;
   }
 
+<<<<<<< HEAD
 /********menu-de-instruções**********/
+=======
+/***menu-de-instruções***/
+>>>>>>> 0a3e222a1ac48e58ee83c2afaba15c46a07b283a
 .column {
     width: 50px; 
     float: left;
