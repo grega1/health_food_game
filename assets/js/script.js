@@ -37,7 +37,7 @@ $(document).ready(function() {
           $(idDragg).hide()       
   
           if (classesString.includes("draggable2")) {         
-            const audio = new Audio('./audio/missed.wav');
+            const audio = new Audio('./audio/missed.mp4');
             audio.play(); 
             $('#img-child').css('display', 'none');
             $('#img-sad-child').css('display', 'flex');                 
