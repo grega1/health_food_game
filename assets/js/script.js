@@ -48,7 +48,7 @@ $(document).ready(function() {
             audio.play();
             $("#img-child").css('display', 'none');
             $('#img-happy-child').css('display', 'flex');
-            $('#img-sad-child').css('display', 'none');   
+            $('#img-sad-child').css('display', 'none');      
           }
           
           $( this )       
