@@ -55,7 +55,7 @@
   
     $('#start-game').on('click', function() {
         console.log('entrei aqui')
-        const audio = new Audio('./audio/game-start.mp4');
+        const audio = new Audio('./assets/audio/game-start.mp4');
         audio.play(); 
     });  
 });
