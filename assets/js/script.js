@@ -42,13 +42,20 @@ $(document).ready(function() {
             $('#img-child').css('display', 'none');
             $('#img-sad-child').css('display', 'flex');    
             $('#img-happy-child').css('display', 'none');             
-  
+              setTimeout(() => {
+                $('#img-child').css('display', 'flex');
+                $('#img-sad-child').css('display', 'none'); 
+              },3000)
           } else {         
             const audio = new Audio('./audio/happy.mp4');
             audio.play();
             $("#img-child").css('display', 'none');
             $('#img-happy-child').css('display', 'flex');
-            $('#img-sad-child').css('display', 'none');   
+            $('#img-sad-child').css('display', 'none'); 
+            setTimeout(() => {
+              $('#img-child').css('display', 'flex');
+              $('#img-happy-child').css('display', 'none'); 
+            },3000)  
           }
           
           $( this )       
