@@ -190,10 +190,7 @@ $(document).ready(function() {
               dataType : 'json',
               contentType : "application/json",
               data: JSON.stringify(userRankData), 
-              //crossDomain: true,
-              //xhrFields: {
-               // withCredentials: true
-           // },               
+                       
               }).done(() => {
            $("#show-score").text(`enviado`);
          })
@@ -209,6 +206,17 @@ $(document).ready(function() {
               .html( "Dropped!" );
         }      
       });
+    });
+    $.ajax({
+      url : "http://localhost:3005/ranking",
+      type : 'GET',
+    }).done((data) => {
+      const dataRanking= JSON.stringify(data);
+      const usersRanking = JSON.parse(dataRanking)
+      usersRanking.forEach((user)=>{
+        $("#ranking").text(`Nome:${user.name} Score:${user.score}`)
+      })
+    
     });
     
   
