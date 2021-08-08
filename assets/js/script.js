@@ -107,8 +107,16 @@ function finishGame() {
 
 $(document).ready(function() {
   $("#cta-button").click(()=>{
-    $("#home-game").css('display', 'none');
-    $(".game-painel").css('display', 'flex');
+    $("#home-game").hide();
+    $(".game-painel").show();
+  })
+  $("#help-icon").click(()=>{
+    $("#container-instructions").show().addClass('absolute-with-z-index');
+    $(".game-painel").addClass('relative-with-blur');
+  })
+  $("#back-to-game").click(()=>{
+    $("#container-instructions").hide().removeClass('absolute-with-z-index');
+    $(".game-painel").show().removeClass('relative-with-blur');
   })
   gameStart();
   newGame.getScore();
@@ -172,9 +180,12 @@ $(document).ready(function() {
             setTimeout(() => {
               $('#img-hungerChild').css('display', 'flex');
               $('#img-happy-child').css('display', 'none'); 
-            },3000)  
+            },1500)  
           }}else{
-            alert('acabou')
+            setTimeout(() => {
+              $('#img-hungerChild').css('display', 'none');
+              $('#img-happy-child').css('display', 'flex'); 
+            },3000)
             let userScore = newGame.getScore();
             let userName = newGame.getName();
             const userRankData = {

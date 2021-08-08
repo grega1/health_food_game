@@ -50,14 +50,20 @@ body {
     flex-direction: column;
     gap:30px;
 }
-#cta-button{
+#cta-button,#back-to-game{
     background-color: #9e00ff;
 }
-#cta-button:hover{
+#cta-button:hover, #back-to-game{
     border: 2px solid #F8BD0A;
     color:#F8BD0A;
 }
 
+#help-icon{
+    
+    position:absolute;
+    top:300px;
+    left:500px;
+}
 .home-buttons{
     width: 494px;
     height: 94px;
@@ -85,14 +91,37 @@ body {
     margin-top: -10%;
     z-index: 1;
 }
+.title{
+    margin:20px;
+}
 #child-instructions{
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+}
+#child-instructions p{
+    margin-left:60px;
+    width: 400px;
+    height: 250px;
+    font-size:32px;
+    align-self: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+#back-to-game{
+    width:250px;
+    height: 50px;
+    border: transparent;
+    border-radius: 25px;
+    font-size:32px;
+    align-self: flex-end;
+    margin-left:60px;
+    margin-bottom: 140px;
 }
 #img-salute-child{
-    width: 436px;
-    height: 500px;
-    justify-self:flex-start;
+    width: 300px;
+    height: 300px;
+    justify-self:flex-end;
+    
 }
 
 #btn{
@@ -141,6 +170,8 @@ body {
 }
 #info-painel{
     display:flex;
+    align-items: center;
+    gap:60px;
     width:478px;
     height:151px;
     background-color: #AE8FD9;
@@ -199,7 +230,15 @@ body {
     margin: 0 1em 1em 0;
     height: 50px;
   }
-
+/*animations*/
 .invisible{
     display: none;
+}
+.absolute-with-z-index{
+    position: absolute;
+    z-index: 10;
+}
+.relative-with-blur {
+    z-index: 0;
+    filter: blur(8px);
 }
