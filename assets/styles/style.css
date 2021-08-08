@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Poppins';
+}
 body {
     background-color: #F2F2F2;
     display: flex;
@@ -6,7 +12,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
     font-family: 'Poppins';
 }
 
@@ -18,22 +23,50 @@ body {
     font-size: 30px;  
 }
 
-#container{
+#container,.game-painel{
     float: left;
     display: flex;
     gap:20px;    
 }
-
+#home-game{
+    width:1000px;
+    height: 500px;
+}
+#home-logo img{
+    width: 600px;
+    height:350px;
+}
+#home-game{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap:200px;
+}
+#homeWithButtons{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
 #cta-button{
+    background-color: #9e00ff;
+}
+#cta-button:hover{
+    border: 2px solid #F8BD0A;
+    color:#F8BD0A;
+}
+
+.home-buttons{
     width: 494px;
     height: 94px;
+    border: transparent;
     border-radius: 25px;
-    background-color: #9e00ff;
+    background-color: #8E6BBF;
     color: #FFFFFF;
     font-size: 2.5rem;
     align-self: center;
-    float: left;
-    z-index: 0;
 }
 
 #start-game{
@@ -124,14 +157,14 @@ body {
     align-items: center;
 
 }
-.animation-child img{
+.animation-child{
     align-self: center;
-    width:500px; 
+    width:200px; 
     height:300px;
 }
-#img-child img{
-    width:450px;
-    height:300px;
+#img-hungerChild{
+    width:500px;
+    height:450px;
 }
 /***menu-de-instruções***/
 .column {

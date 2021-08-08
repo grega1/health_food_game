@@ -102,21 +102,14 @@ function gameStart() {
   //startLevel();
 }
 
-function finishLevel() {
+function finishGame() {
 }
-function hitVirus(id, level = newGame.getCurrentLevel()) {
-  newGame.getScore();
- 
-  
-
-    setTimeout(() => {
-      playAudio(increaseSound);
-      captureScore.innerHTML = `Pontos: ${newGame.getScore()}`;
-  }, 300);
-}
-
 
 $(document).ready(function() {
+  $("#cta-button").click(()=>{
+    $("#home-game").css('display', 'none');
+    $(".game-painel").css('display', 'flex');
+  })
   gameStart();
   newGame.getScore();
     $( function() {
@@ -154,30 +147,34 @@ $(document).ready(function() {
           const classesString = $(ui.draggable).attr('class');
           const idDragg = "#"+ $(ui.draggable).attr('id')  
           console.log($(idDragg))    
-          $(idDragg).hide()       
-          
-
-          
+          $(idDragg).removeClass("draggable").hide();    
+          if($("#container-foods > div").hasClass("draggable")){
           if (classesString.includes("draggable2")) {         
             const audio = new Audio('./audio/missed.mp4');
             audio.play(); 
-            $('#img-child').css('display', 'none');
+            $('#img-hungerChild').css('display', 'none');
             $('#img-sad-child').css('display', 'flex');    
             $('#img-happy-child').css('display', 'none');             
               setTimeout(() => {
-                $('#img-child').css('display', 'flex');
+                $('#img-hungerChild').css('display', 'flex');
                 $('#img-sad-child').css('display', 'none'); 
               },3000)
           } else {         
             const audio = new Audio('./audio/happy.mp4');
             audio.play();
-            $("#img-child").css('display', 'none');
+            $("#img-hungerChild").css('display', 'none');
             $('#img-happy-child').css('display', 'flex');
             $('#img-sad-child').css('display', 'none'); 
             newGame.increaseScore(dropValue);
             console.log(dropValue)
             $("#show-score").text(`${newGame.getScore()}`);
             console.log(newGame.getScore());
+            setTimeout(() => {
+              $('#img-hungerChild').css('display', 'flex');
+              $('#img-happy-child').css('display', 'none'); 
+            },3000)  
+          }}else{
+            alert('acabou')
             let userScore = newGame.getScore();
             let userName = newGame.getName();
             const userRankData = {
@@ -194,10 +191,7 @@ $(document).ready(function() {
               }).done(() => {
            $("#show-score").text(`enviado`);
          })
-            setTimeout(() => {
-              $('#img-child').css('display', 'flex');
-              $('#img-happy-child').css('display', 'none'); 
-            },3000)  
+            
           }
           
           $( this )       
