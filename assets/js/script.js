@@ -76,7 +76,7 @@ class Game {
 const newGame = new Game();
 
 //Audios
-const btnSelectSound = "../audio/btn-select.mp3";
+/*const btnSelectSound = "../audio/btn-select.mp3";
 const healthFoodSound = "../audio/mask-up.mp3";
 const levelUpSound = "../audio/level-up.mp3";
 const gameStartSound = "../audio/game-start.ogg";
@@ -87,7 +87,7 @@ const mainMusic = new Audio(backgroundSound);
 mainMusic.volume = 0.1;
 mainMusic.play();
 mainMusic.loop = true;
-
+*/
 function playAudio(sound) {
     const audioToPlay = new Audio(sound);
     audioToPlay.volume = 0.1;
@@ -155,7 +155,7 @@ $(document).ready(function() {
           const idDragg = "#"+ $(ui.draggable).attr('id')  
           console.log($(idDragg))    
           $(idDragg).hide()       
-          if($(this).hasClass("draggable2")){
+          
 
           
           if (classesString.includes("draggable2")) {         
@@ -178,12 +178,29 @@ $(document).ready(function() {
             console.log(dropValue)
             $("#show-score").text(`${newGame.getScore()}`);
             console.log(newGame.getScore());
+            let userScore = newGame.getScore();
+            let userName = newGame.getName();
+            const userRankData = {
+              name:userName,
+              score:userScore,
+            }
+            $.ajax({
+              url : "http://localhost:3005/ranking",
+              type : 'POST',
+              dataType : 'json',
+              contentType : "application/json",
+              data: JSON.stringify(userRankData), 
+              //crossDomain: true,
+              //xhrFields: {
+               // withCredentials: true
+           // },               
+              }).done(() => {
+           $("#show-score").text(`enviado`);
+         })
             setTimeout(() => {
               $('#img-child').css('display', 'flex');
               $('#img-happy-child').css('display', 'none'); 
             },3000)  
-          }}else{
-            
           }
           
           $( this )       
