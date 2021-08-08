@@ -50,10 +50,10 @@ body {
     flex-direction: column;
     gap:30px;
 }
-#cta-button,#back-to-game{
+#cta-button,#back-to-game,#back-to-home{
     background-color: #9e00ff;
 }
-#cta-button:hover, #back-to-game{
+#cta-button:hover, #back-to-game:hover,#back-to-home:hover{
     border: 2px solid #F8BD0A;
     color:#F8BD0A;
 }
@@ -107,7 +107,8 @@ body {
     text-align: center;
     color: #FFFFFF;
 }
-#back-to-game{
+
+#back-to-game,#back-to-home{
     width:250px;
     height: 50px;
     border: transparent;
@@ -117,7 +118,12 @@ body {
     margin-left:60px;
     margin-bottom: 140px;
 }
-#img-salute-child{
+#back-to-home{
+    width: 400px;
+    height: 60px;
+    color:#FFFFFF;
+}
+#img-salute-child, #img-dancing-child{
     width: 300px;
     height: 300px;
     justify-self:flex-end;
@@ -129,7 +135,7 @@ body {
 }
 
 /**css-instruções****/
-#container-instructions{
+#container-instructions,#game-win{
     width: 791px;
     height: 550px;   
     text-align: center;
@@ -139,6 +145,11 @@ body {
     border-radius:5px;
     border-color:#111440;
 }
+#game-win{
+    width: 850px;
+    height: 700px; 
+}
+
 
 /*****food****/
 
@@ -229,6 +240,15 @@ body {
     border: 1px dotted black;
     margin: 0 1em 1em 0;
     height: 50px;
+  }
+  .game-win-content{
+    display:flex;
+    flex-direction: column;
+    gap:40px;
+    align-items: center;
+  }
+  .title .show-score{
+      color: #F8BD0A;
   }
 /*animations*/
 .invisible{
