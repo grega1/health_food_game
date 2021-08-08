@@ -115,6 +115,16 @@ $(document).ready(function () {
     audio.volume = 0.3;
     audio.play();
     audio.loop = true;
+    $.ajax({
+      url: "http://localhost:3005/ranking",
+      type: 'GET',
+    }).done((data) => {
+      const dataRanking = JSON.stringify(data);
+      const usersRanking = JSON.parse(dataRanking)
+      usersRanking.forEach((user) => {
+        $("#ranking").text(`${user.name} ${user.score}`)
+      })
+    });
   })
   $("#help-icon").click(() => {
     $("#container-instructions").show().addClass('absolute-with-z-index');
@@ -212,16 +222,6 @@ $(document).ready(function () {
         }
       }
     });
-  });
-  $.ajax({
-    url: "http://localhost:3005/ranking",
-    type: 'GET',
-  }).done((data) => {
-    const dataRanking = JSON.stringify(data);
-    const usersRanking = JSON.parse(dataRanking)
-    usersRanking.forEach((user) => {
-      $("#ranking").text(`Nome:${user.name} Score:${user.score}`)
-    })
   });
   //back to home//
   $("#back-to-home").click(() => {
