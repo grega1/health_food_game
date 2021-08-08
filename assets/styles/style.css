@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 body {
     background-color: #F2F2F2;
     display: flex;
@@ -9,11 +10,6 @@ body {
     font-family: 'Poppins';
 }
 
-div{
-    display: inline-block;
-    margin: 12px;
-    font-size: 30px; 
-}
 
 #logo{
     width: 503px;
@@ -24,9 +20,8 @@ div{
 
 #container{
     float: left;
-    display: flex; 
-    margin-left: 10px;
-    
+    display: flex;
+    gap:20px;    
 }
 
 #cta-button{
@@ -57,10 +52,14 @@ div{
     margin-top: -10%;
     z-index: 1;
 }
-
-#img-child{
+#child-instructions{
+    display: flex;
+    align-items: flex-end;
+}
+#img-salute-child{
     width: 436px;
-    height: 654px;
+    height: 500px;
+    justify-self:flex-start;
 }
 
 #btn{
@@ -80,22 +79,60 @@ div{
 }
 
 /*****food****/
+
 #container-foods{
+    display:flex;
+    flex-wrap: wrap;
     width: 730px;
-    height: 550px;
+    height: 750px;
     text-align: center;
     font-size: 36px;
-    background-color: #AE8FD9;
-    border:solid 20px;
-    border-radius:5px;
-    border-color:#111440;
+    background-color: #AE8FD9;    
+    border-radius:10px;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+   
 }
 
 #draggable, #draggable2{
     background-color: transparent;
     border: transparent;
   }
+#right-painel{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      gap:20px;    
 
+}
+#info-painel{
+    display:flex;
+    width:478px;
+    height:151px;
+    background-color: #AE8FD9;
+    border-radius: 10px;
+    justify-content: center;
+}
+#droppable{
+    display: flex;
+    width:478px;
+    height:580px;
+    background-color: #AE8FD9;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+.animation-child img{
+    align-self: center;
+    width:500px; 
+    height:300px;
+}
+#img-child img{
+    width:450px;
+    height:300px;
+}
 /***menu-de-instruções***/
 .column {
     width: 50px; 
