@@ -1,38 +1,143 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/styles/style.css" rel="stylesheet">  
+    <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>jQuery UI Droppable</title>
 </head>
 
 <body>
-   
-       <div id="logo">
-        <!--<img src='./img/Logo Verde de Restaurante.jpg' id="logo"> -->
-        <h1>HEALTH FOOD</h1> 
-       </div> 
-       
-       <div id="container"> 
-        <div id="btn">
-            <button id="cta-button" onclick="startGame()">INICIAR JOGO</button>   
-            <br/><br/>  <br/>
-            <button id="cta-button" onclick="instrucoes()">INSTRUÇÕES</button>
-        </div>  
+    <div id="container">
+        <div id="home-game">
+            <div id="home-logo">
+                <img src="assets/img/logo.svg" alt="logo">
+            </div>
+            <div class="game-painel">
+                <div id="homeWithButtons">
+                    <button class="home-buttons" id="cta-button">INICIAR JOGO</button>
+                    <button class="home-buttons">INSTRUÇÕES</button>
+                </div>
 
-        <div id="child">
-            <img src='assets/img/happy-child 1.png' id="img-child" >
+                <div id="child">
+                    <img src='assets/img/saluteChildLeft.svg' id="img-child">
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- Instructions-->
+    <div id="container-instructions" style="display:none">
+        <div class="title">
+            <h2>INSTRUÇÕES</h2>
+        </div>
+        <div id="child-instructions">
+            <div class="help-with-button">
+                <p>ARRASTE OS ALIMENTO SAUDÁVEIS ATÉ A MENINA PARA PONTUAR</p>
+                <button id="back-to-game">Voltar</button>
+            </div>
+            <img src='assets/img/saluteChildLeft.svg' id="img-salute-child">
 
+        </div>
+    </div>
+    <!-- End Game-->
+    <div id="game-win" style="display:none">
+        <div class="title">
+            <h2>Parabéns, você venceu!</h2>
+            <h3>Sua pontuação:
+                <span class="show-score">10</span>
+            </h3>
+        </div>
+        <div id="child-instructions">
+            <div class="game-win-content">
+                <img src='assets/img/dancingChild.svg' id="img-dancing-child">
+                <button id="back-to-home">Jogar Novamente</button>
+            </div>
+            
+
+        </div>
     </div>
 
+
+    <!-- Game Painel-->
+    <div class="game-painel" style="display:none">
+        <div id="left-painel">
+            <img src='assets/img/help-icon.svg' alt="help" id="help-icon">
+            <div id="container-foods">
+                <div class="draggable" class="ui-widget-content" id="1">
+                    <img src='assets/img/orange.png'>
+                </div>
+                <div class="draggable" class="ui-widget-content" id="2">
+                    <img src='assets/img/banana.png'>
+                </div>
+                <div class="draggable2" class="ui-widget-content" id="3">
+                    <img src='assets/img/pizza.png'>
+                </div>
+                <div class="draggable" class="ui-widget-content" id="4">
+                    <img src='assets/img/apple.png'>
+                </div>
+                <div class="draggable" class="ui-widget-content" id="5">
+                    <img src='assets/img/sleeve.png'>
+                </div>
+                <div class="draggable" class="ui-widget-content" id="6">
+                    <img src='assets/img/aubergine.png'>
+                </div>
+                <div class="draggable" class="ui-widget-content" id="7">
+                    <img src='assets/img/pear.png'>
+                </div>
+                <div class="draggable2" class="ui-widget-content" id="8">
+                    <img src='assets/img/cake.png'>
+                </div>
+                <div class="draggable2" class="ui-widget-content" id="9">
+                    <img src='assets/img/food.png'>
+                </div>
+                <div class="draggable2" class="ui-widget-content" id="10">
+                    <img src='assets/img/refri.png'>
+                </div>
+                <div class="draggable2" class="ui-widget-content" id="11">
+                    <img src='assets/img/cupCake.png'>
+                </div>
+                <div class="draggable" class="ui-widget-content" id="12">
+                    <img src='assets/img/grape.png'>
+                </div>
+            </div>
+        </div>
+        <div id="right-painel">
+            <div id="info-painel">
+                <div id="score-painel">
+                    <h3>Score:</h3>
+                    <span class="show-score">10</span>
+
+                </div>
+                <div>
+                    <h3>Ranking:</h3>
+                    <p id="ranking">10</p>
+                </div>
+            </div>
+
+            <div id="droppable" class="ui-widget-header">
+                <img src='assets/img/hungerChild.svg' id="img-hungerChild">
+                <img src='assets/img/veryHappyChild.gif' id="img-happy-child" class="animation-child"
+                    style="display:none">
+                <img src='assets/img/sadChild.svg' id="img-sad-child" class="animation-child" style="display:none">
+            </div>
+
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

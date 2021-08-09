@@ -175,40 +175,18 @@ function gameStart() {
   startLevel();
 }
 function showFruits() {
-  let drawRange = newGame.drawSlots(1, 9);
-  let captureHealthFoods = document.getElementById(`health-food${drawRange}`);
-  let captureHole = document.getElementById(`hole${drawRange}`);
-
-
-  captureHealthFoods.classList.add("visible");
-  captureHealthFoods.classList.remove("invisible");
-  captureHole.classList.add("invisible");
-  captureHole.classList.remove("visible");
+  
   let time = document.getElementById("time-input");
   time.value = levelTimer.currentTimeString();
 
 
-  setTimeout(() => {
-      let decreaseLife = document.getElementById(`masks`);
-      let remainLives = '';
-
-      if (captureHealthFoods.classList.contains("visible") && decreaseLife.hasChildNodes()) {
-          newGame.setLifeStatus((newGame.getLifeStatus() - 1));
-          for (let i = 1; i <= newGame.getLifeStatus(); i++) {
-              remainLives += `<img src="img/icon-heart.png" id="mask${i}" />`
-          }
-          decreaseLife.innerHTML = remainLives;
-      }
+  setTimeout(() => {    
 
       captureHealthFoods.classList.add("invisible");
       captureHealthFoods.classList.remove("visible");
       captureHole.classList.add("visible");
       captureHole.classList.remove("invisible");
 
-      if (newGame.getLifeStatus() <= 0) {
-          levelTimer.stopTimer();
-          showGameLost();
-      }
   }, (newGame.getIntervalByLevel() / 1.5))
 
 }
@@ -225,31 +203,14 @@ function finishLevel() {
   levelTimer.stopTimer();
   let time = document.getElementById("time-input");
   time.value = '00:00:00.000'
-  for (let i = 1; i <= 9; i++) {
-      let clearVirus = document.getElementById(`virus${[i]}`);
-      let clearHole = document.getElementById(`hole${[i]}`);
-      clearVirus.classList.add("invisible");
-      clearVirus.classList.remove("visible");
-      clearHole.classList.add("visible");
-      clearHole.classList.remove("invisible");
-  }
-  nextLevel();
 }
 function hitVirus(id, level = newGame.getCurrentLevel()) {
   newGame.getScore();
-  let captureScore = document.getElementById("score");
-  let virusValue = newGame.getPointsByLevel(level);
-  let captureHealthFoods = document.getElementById(`virus${id}`);
-  let captureHole = document.getElementById(`hole${id}`);
+ 
 
   newGame.increaseScore(virusValue);
 
-  captureHealthFoods.classList.remove("visible")
-  captureHealthFoods.classList.add("invisible");
-  captureHole.classList.add("visible");
-  captureHole.classList.remove("invisible");
-  playAudio(sprayClicksSound);
-  setTimeout(() => {
+    setTimeout(() => {
       playAudio(increaseSound);
       captureScore.innerHTML = `Pontos: ${newGame.getScore()}`;
   }, 300);
